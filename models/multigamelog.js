@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class regions extends Model {
+  class multiGameLog extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,14 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.regions.hasMany(models.users, {foreignKey:'regionID'})
+      models.multiGameLog.hasMany(models.users, {foreignKey:'userID'});
+      models.multiGameLog.belongsTo(models.multiPlayerGames, {foreignKey: 'multiPlayerGameID'});
     }
   };
-  regions.init({
-    name: DataTypes.STRING
+  multiGameLog.init({
+    multiPlayerGameID: DataTypes.INTEGER,
+    user1ID: DataTypes.INTEGER,
+    user2ID: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'regions',
+    modelName: 'multiGameLog',
   });
-  return regions;
+  return multiGameLog;
 };

@@ -2,49 +2,40 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-  
-      await queryInterface.bulkInsert('users', [
+    await queryInterface.bulkInsert('regions', 
+      [ 
         {
-          username: 'jacob',
-          password: '1234',
-          points: 400,
-          regionID: 1,
+          name: 'Southeast',
           createdAt: new Date(),
           updatedAt: new Date() 
         },
         {
-          username: 'jason',
-          password: '5678',
-          points: 400,
-          regionID: 2,
+          name: 'NorthEast',
           createdAt: new Date(),
           updatedAt: new Date() 
         },
         {
-          username: 'mac',
-          password: '1111',
-          points: 400,
-          regionID: 3,
+          name: 'Eastcoast',
           createdAt: new Date(),
           updatedAt: new Date() 
         },
         {
-          username: 'andrena',
-          password: '2222',
-          points: 400,
-          regionID: 4,
+          name: 'Midwest',
           createdAt: new Date(),
           updatedAt: new Date() 
         },
         {
-          username: 'veronica',
-          password: '3333',
-          points: 100,
-          regionID: 5,
+          name: 'Southwest',
           createdAt: new Date(),
           updatedAt: new Date() 
-        
-        }], {});
+        },
+        {
+          name: 'West',
+          createdAt: new Date(),
+          updatedAt: new Date() 
+        }
+      ], {});
+    
   },
 
   down: async (queryInterface, Sequelize) => {
