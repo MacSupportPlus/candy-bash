@@ -11,8 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.users.hasMany(models.multiGameLog, {foreignKey:'userID'});
-      models.users.hasMany(models.singlegamelog, {foreignKey:'userID'});
+      // models.users.hasMany(models.multiGameLog, {foreignKey:'userID'});
+      // models.users.belongsTo(models.singlegamelog, {foreignKey:'user1ID'});
+      // models.users.belongsTo(models.multigamelog, {foreignKey:'user1ID'});
+      // models.users.belongsTo(models.multigamelog, {foreignKey:'user2ID'});
       models.users.belongsTo(models.regions, {foreignKey: 'regionID'});
     }
   };

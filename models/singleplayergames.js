@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   singlePlayerGames.init({
-    title: DataTypes.STRING
+    title: DataTypes.STRING,
+    user1ID: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'singlePlayerGames',

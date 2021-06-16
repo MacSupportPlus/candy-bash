@@ -15,7 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   multiPlayerGames.init({
-    title: DataTypes.STRING
+    title: DataTypes.STRING,
+    user1ID: DataTypes.INTEGER,
+    user2ID: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'multiPlayerGames',
